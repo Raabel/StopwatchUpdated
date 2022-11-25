@@ -4,7 +4,7 @@ namespace StopwatchUpdated
     {
         int timeCs, timeSec, timeMin;
         bool isActive;
-        
+      
 
         public Form1()
         {
@@ -62,6 +62,7 @@ namespace StopwatchUpdated
            
         }
 
+        public delegate void drawDelegate();
         private void DrawTime()
         {
             lblCs.Text = String.Format("{0:00}", timeCs);
@@ -80,8 +81,10 @@ namespace StopwatchUpdated
             Thread timerThread = new Thread(timer);
 
             timerThread.IsBackground = true;
+
             
             timerThread.Start();
+
    
         }
     }
